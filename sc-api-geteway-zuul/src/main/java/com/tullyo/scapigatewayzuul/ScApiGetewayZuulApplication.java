@@ -1,15 +1,17 @@
-package com.tullyo.scusuario;
+package com.tullyo.scapigatewayzuul;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 
 @EnableEurekaClient
+@EnableZuulProxy
 @SpringBootApplication
-public class ScUsuarioApplication {
+public class ScApiGetewayZuulApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ScUsuarioApplication.class, args);
+		SpringApplication.run(ScApiGetewayZuulApplication.class, args);
 	}
 
 }
