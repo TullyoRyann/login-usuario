@@ -3,9 +3,9 @@ insert into USUARIO  (ID_USUARIO, LOGIN, SENHA ) values (2, 'jessica', '$2a$10$D
 insert into USUARIO  (ID_USUARIO, LOGIN, SENHA ) values (3, 'pedro', '$2a$10$DdLFbdt/bYWEw.3jq90Yvu87H5dfnThDfp5gEviBzc5I32MWTfpLO');
 insert into USUARIO  (ID_USUARIO, LOGIN, SENHA ) values (4, 'jô', '$2a$10$DdLFbdt/bYWEw.3jq90Yvu87H5dfnThDfp5gEviBzc5I32MWTfpLO');
 
-insert into PERFIL  (ID_PERFIL , NOME) values (1, 'ADMIN');
-insert into PERFIL  (ID_PERFIL , NOME ) values (2, 'FUNCIONARIO');
-insert into PERFIL  (ID_PERFIL , NOME ) values (3, 'RH');
+insert into PERFIL  (ID_PERFIL , NOME) values (1, 'ROLE_ADMIN');
+insert into PERFIL  (ID_PERFIL , NOME ) values (2, 'ROLE_FUNCIONARIO');
+insert into PERFIL  (ID_PERFIL , NOME ) values (3, 'ROLE_RH');
 
 insert into USUARIO_PERFIL   (ID_USUARIO, ID_PERFIL) values (1, 1);
 insert into USUARIO_PERFIL  (ID_USUARIO, ID_PERFIL) values (2, 2);

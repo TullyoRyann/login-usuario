@@ -2,6 +2,7 @@ package com.tullyo.scoauth.domain.model;
 
 import java.io.Serializable;
 import java.util.Collection;
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -25,8 +26,9 @@ public class Usuario implements Serializable, UserDetails {
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		return perfis.stream().map(p -> new SimpleGrantedAuthority(p.getNome()))
-				.collect(Collectors.toList());
+		List<SimpleGrantedAuthority> collect = perfis.stream().map(p -> new SimpleGrantedAuthority(p.getNome()))
+		.collect(Collectors.toList());
+		return collect;
 	}
 
 	@Override
