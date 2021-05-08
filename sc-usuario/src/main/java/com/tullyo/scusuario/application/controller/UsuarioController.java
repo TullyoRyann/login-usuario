@@ -1,8 +1,5 @@
 package com.tullyo.scusuario.application.controller;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,20 +18,9 @@ public class UsuarioController {
 
 	private UsuarioService usuarioService;
 	
-	private Logger logger = LoggerFactory.getLogger(UsuarioController.class);
-	
-	@Value("${test.config}")
-	private String testConfig;
-
 	public UsuarioController(UsuarioService usuarioService) {
 		this.usuarioService = usuarioService;
 	}
-	
-	@GetMapping(value = "/configs")
-	public ResponseEntity<Void> getConfigs() {
-		logger.info("CONFIG = " + testConfig);
-		return ResponseEntity.noContent().build();
-	}	
 
 	@GetMapping(value = "/search")
 	public ResponseEntity<Usuario> search(@RequestParam String login) {

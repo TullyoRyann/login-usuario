@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 
 import com.sun.istack.NotNull;
 
@@ -20,7 +21,8 @@ import lombok.ToString;
 
 @Getter
 @Setter
-@Entity(name = "usuario")
+@Entity
+@Table(name = "usuario")
 public class Usuario implements Serializable {
 
 	private static final long serialVersionUID = 5821812933933055203L;
@@ -42,7 +44,9 @@ public class Usuario implements Serializable {
 	@NotNull
 	@ToString.Exclude
 	@ManyToMany
-	@JoinTable(name = "usuario_perfil", joinColumns = @JoinColumn(name = "id_usuario"), inverseJoinColumns = @JoinColumn(name = "id_perfil"))
+	@JoinTable(name = "usuario_perfil", 
+		joinColumns = @JoinColumn(name = "id_usuario"), 
+		inverseJoinColumns = @JoinColumn(name = "id_perfil"))
 	private Set<Perfil> perfis;
 
 }
