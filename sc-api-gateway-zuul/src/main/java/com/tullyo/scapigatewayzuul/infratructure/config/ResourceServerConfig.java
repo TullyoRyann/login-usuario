@@ -17,7 +17,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 	
 	private static final String[] PUBLIC = { "/sc-oauth/oauth/token" };
 	
-	private static final String[] ADMIN = { "/sc-usuario/**" };
+	private static final String[] ADMIN = { "/sc-usuario/**", "/actuator/refresh" };
 
 	@Override
 	public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
